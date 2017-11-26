@@ -86,11 +86,14 @@ int main()
 {
     int iteration = 5;
     ll num;
+
     cout << "Enter integer to test primality: ";
     cin >> num;
+
     if (Miller(num, iteration))
         cout << num << " is prime" << endl;
     else
         cout << num << " is not prime" << endl;
+
     return 0;
 }
