@@ -1,3 +1,4 @@
-num=input()
-num=num.split()
-print(len(num))
+import math
+
+num=1<<31
+
