@@ -8,18 +8,18 @@
 #define ll long long
 
 using namespace std;
-  
+
 /* 
  * calculates (a * b) % c taking into account that a * b might overflow 
  */
 
 ll mulmod(ll a, ll b, ll mod)
 {
-    ll x = 0,y = a % mod;
+    ll x = 0, y = a % mod;
     while (b > 0)
     {
         if (b % 2 == 1)
-        {    
+        {
             x = (x + y) % mod;
         }
         y = (y * 2) % mod;
@@ -44,17 +44,17 @@ ll modulo(ll base, ll exponent, ll mod)
     }
     return x % mod;
 }
-   
+
 /*
  * Miller-Rabin primality test, iteration signifies the accuracy
  */
-bool Miller(ll p,int iteration)
+bool Miller(ll p, int iteration)
 {
     if (p < 2)
     {
         return false;
     }
-    if (p != 2 && p % 2==0)
+    if (p != 2 && p % 2 == 0)
     {
         return false;
     }
@@ -86,14 +86,11 @@ int main()
 {
     int iteration = 5;
     ll num;
-
-    cout<<"Enter integer to test primality: ";
-    cin>>num;
-
+    cout << "Enter integer to test primality: ";
+    cin >> num;
     if (Miller(num, iteration))
-        cout<<num<<" is prime"<<endl;
+        cout << num << " is prime" << endl;
     else
-        cout<<num<<" is not prime"<<endl;
-
+        cout << num << " is not prime" << endl;
     return 0;
 }
